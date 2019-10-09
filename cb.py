@@ -313,10 +313,10 @@ def main():
         column_insights(df, c)
 
     # Rating pie chart for all reviews
-    #rating_pie_chart(df, "Rating Distribution")
+    rating_pie_chart(df, "Rating Distribution")
 
     # Grid of rating by segment data
-    #segment_grid(df, insight_cols, insight_cols_name)
+    segment_grid(df, insight_cols, insight_cols_name)
 
     # Drill down into brand data
     brand_insights(df)
@@ -330,70 +330,10 @@ def main():
     # Drill down into age group data
     # age_group_insights(df)
 
-    #find_pain_points(df)
-    #find_highlights(df)
+    find_pain_points(df)
+    find_highlights(df)
 
 if __name__ == '__main__':
     main()
 
-# Rating Bar Plot
-# for x in df['TRIP_PURPOSE_DESC'].unique():
-#     print(x)
-#     df_filter = df[df['TRIP_PURPOSE_DESC'] == x]
-#     labels, counts = np.unique(df_filter["RATING"], return_counts=True)
-#     print(labels)
-#     print(counts)
-#     plt.bar(labels, counts, align='center')
-#
-# plt.xlabel('Rating')
-# plt.ylabel('Rating count')
-# plt.title('Rating Distribution')
-# plt.show()
-
-# Bar plot - count of ratings vs. trip purpose
-
-    # Bigrams
-    # bgs = nltk.bigrams(word_tokens)
-    # fdist = nltk.FreqDist(bgs)
-    # for obj in fdist.most_common():
-    #     if obj[1] > 2: print(obj)
-
-    # Collocations
-    #bigram_measures = nltk.collocations.BigramAssocMeasures()
-    # #trigram_measures = nltk.collocations.TrigramAssocMeasures()
-    #finder = BigramCollocationFinder.from_words(word_tokens, window_size=3)
-    # finder.apply_freq_filter(2)
-    # #print(finder.score_ngrams(bigram_measures.pmi))
-    #print(finder.nbest(bigram_measures.pmi,30))
-    # for k,v in finder.ngram_fd.items():
-    #     print(k,v)
-    #print(finder.nbest(bigram_measures.pmi, 10))
-
-    # cols = ['NaturalId', 'Source', 'AGE', 'AGE_GROUP_DESC', 'AUTHOR',
-    #         'BRAND_DESC', 'CITY', 'Document Date', 'GENDER', 'HOTEL',
-    #         'Language', 'LOYALTY_DESC', 'Natural Id', 'NPS_LEVEL',
-    #         'NPS_POSNEG_FLAG', 'Parent Natural ID', 'RATING', 'REGION_DESC',
-    #         'RESPONSE_E', 'Time of Day(UTC)', 'TRIP_PURPOSE_DESC',
-    #         'VerbatimType', 'Verbatim', 'Sentence Sentiment']
-    #
-    # include_cols = ['Source', 'BRAND_DESC', 'REGION_DESC', 'CITY',
-    #                 'AGE_GROUP_DESC', 'GENDER',  'LOYALTY_DESC',
-    #                 'NPS_LEVEL', 'TRIP_PURPOSE_DESC', 'RATING', 'Verbatim',
-    #                 'Sentence Sentiment']
-    #
-    # report_cols = ['Source', 'BRAND_DESC', 'REGION_DESC', 'CITY',
-    #                'AGE_GROUP_DESC', 'GENDER',  'LOYALTY_DESC',
-    #                'NPS_LEVEL', 'TRIP_PURPOSE_DESC']
-    #
-    # exclude_cols = ['NaturalId', 'AGE', 'AUTHOR', 'Document Date', 'HOTEL',
-    #                 'Language', 'Natural Id', 'NPS_POSNEG_FLAG',
-    #                 'Parent Natural ID', 'RESPONSE_E', 'Time of Day(UTC)',
-    #                 'VerbatimType']
-
-    # Find words commonly occuring in low reviews but not all reviews.
-    # list_all = df_all_words.head(50).word.tolist()
-    # list_low = df_low_words.head(50).word.tolist()
-    # pain_point_set = list(set(list_low) - set(list_all))
-    #
-    #
 # NPS = Net Promoter Score = an index ranging from -100 to 100 that measures the willingness of customers to recommend a company's products or services to others. It is used as a proxy for gauging the customer's overall satisfaction with a company's product or service and the customer's loyalty to the brand.
